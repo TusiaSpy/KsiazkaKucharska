@@ -1,5 +1,5 @@
 package przepisy;
 
-public class Desery {
+public class Desery extends Dania{
 
 }

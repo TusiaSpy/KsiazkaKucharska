@@ -1,5 +1,5 @@
 package przepisy;
 
-public class DaniaGlowne {
+public class DaniaGlowne extends Dania {
 
 }
