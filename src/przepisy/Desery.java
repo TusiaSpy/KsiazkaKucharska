@@ -1,5 +1,6 @@
 package przepisy;
 
-public class Desery extends Dania{
+public class Desery extends Dania {
+	String kalorycznosc;
 
 }

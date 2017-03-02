@@ -5,6 +5,5 @@ public abstract class Dania {
 	int dlaIluOsob;
 	String sposobPrzygotowania;
 	String stopienTrudnosci;
-	
 
 }
