@@ -1,5 +1,5 @@
 package przepisy;
 
-public class DaniaGlowne extends Dania {
+public class DanieGlowne extends Danie {
 	boolean wegetarianskie;
 }

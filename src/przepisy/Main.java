@@ -3,7 +3,7 @@ package przepisy;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Przepisy {
+public class Main {
 
 	public static void main(String[] args) {
 		ArrayList<String> skladniki = new ArrayList<String>();
@@ -33,7 +33,7 @@ public class Przepisy {
 		System.out.println( skladniki.contains("szpinak"));
 		System.out.println( skladniki.contains("mleko"));
 		
-
+		Zupa buraczkowa = new Zupa();
 	}
 
 	
