@@ -34,6 +34,16 @@ public class Main {
 		System.out.println( skladniki.contains("mleko"));
 		
 		Zupa buraczkowa = new Zupa();
+		System.out.println(buraczkowa);
+		buraczkowa.dodajSposobPrzygotowania("Umyj buraki");
+		System.out.println(buraczkowa);
+		
+		Deser sernik = new Deser("niskokaloryczny", 10);
+		System.out.println(sernik);
+	
+
+	 	Deser sernik2 = new Deser("wysokokaloryczne", 6);
+		System.out.println(sernik2);
 	}
 
 	

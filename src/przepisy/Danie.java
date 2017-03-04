@@ -9,4 +9,15 @@ public abstract class Danie {
 	String stopienTrudnosci;
 	ArrayList<String> skladniki;
 
+	public void dodajSposobPrzygotowania (String sposobPostepowania){
+		 sposobPrzygotowania = sposobPostepowania;
+	}
+
+	@Override
+	public String toString() {
+		return "Danie [czasPrzygotowania=" + czasPrzygotowania + ", dlaIluOsob=" + dlaIluOsob + ", sposobPrzygotowania="
+				+ sposobPrzygotowania + ", stopienTrudnosci=" + stopienTrudnosci + ", skladniki=" + skladniki + "]";
+	}
+	
 }
+ 
