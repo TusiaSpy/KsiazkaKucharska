@@ -9,8 +9,16 @@ public abstract class Danie {
 	String stopienTrudnosci;
 	ArrayList<String> skladniki;
 
-	public void dodajSposobPrzygotowania (String sposobPostepowania){
-		 sposobPrzygotowania = sposobPostepowania;
+	public void dodajSposobPrzygotowania(String sposobPostepowania) {
+		sposobPrzygotowania = sposobPostepowania;
+	}
+
+	Danie(int czas, int osoby, String przygotowanie, String trudnosc) {
+		czasPrzygotowania = czas;
+		dlaIluOsob = osoby;
+		sposobPrzygotowania = przygotowanie;
+		stopienTrudnosci = trudnosc;
+		skladniki = new ArrayList<String>();
 	}
 
 	@Override
@@ -18,6 +26,5 @@ public abstract class Danie {
 		return "Danie [czasPrzygotowania=" + czasPrzygotowania + ", dlaIluOsob=" + dlaIluOsob + ", sposobPrzygotowania="
 				+ sposobPrzygotowania + ", stopienTrudnosci=" + stopienTrudnosci + ", skladniki=" + skladniki + "]";
 	}
-	
+
 }
- 

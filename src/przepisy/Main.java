@@ -33,17 +33,20 @@ public class Main {
 		System.out.println( skladniki.contains("szpinak"));
 		System.out.println( skladniki.contains("mleko"));
 		
-		Zupa buraczkowa = new Zupa();
+		Zupa buraczkowa = new Zupa(30, 3, "zagotuj wode", "latwe", true);
 		System.out.println(buraczkowa);
 		buraczkowa.dodajSposobPrzygotowania("Umyj buraki");
 		System.out.println(buraczkowa);
-		
-		Deser sernik = new Deser("niskokaloryczny", 10);
+		DanieGlowne schabowy = new DanieGlowne(45, 2, "ubij kotleta", "srednio trudne", false );
+		System.out.println(schabowy);
+		Deser sernik = new Deser(60, 10, "zmiel twarog", "trudne", "tuczace");
 		System.out.println(sernik);
-	
-
-	 	Deser sernik2 = new Deser("wysokokaloryczne", 6);
-		System.out.println(sernik2);
+		
+		//sernik.dodajSkladnik("ser");
+		
+		
+		
+		
 	}
 
 	
