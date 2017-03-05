@@ -33,19 +33,35 @@ public class Main {
 		System.out.println( skladniki.contains("szpinak"));
 		System.out.println( skladniki.contains("mleko"));
 		
-		Zupa buraczkowa = new Zupa(30, 3, "zagotuj wode", "latwe", true);
+		Zupa buraczkowa = null;
+		try {
+			buraczkowa = new Zupa(130, 3, "zagotuj wode", "latwe", true);
+		} catch (ZbytCzasochlonne e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		buraczkowa.dodajSkladnik("buraki");
+		buraczkowa.dodajSkladnik("woda");
+		buraczkowa.dodajSkladnik("marchew");
 		System.out.println(buraczkowa);
 		buraczkowa.dodajSposobPrzygotowania("Umyj buraki");
 		System.out.println(buraczkowa);
 		DanieGlowne schabowy = new DanieGlowne(45, 2, "ubij kotleta", "srednio trudne", false );
+		schabowy.dodajSkladnik("kotlet wieprzowy");
+		schabowy.dodajSkladnik("bulka tarta");
+		schabowy.dodajSkladnik("jajka");
 		System.out.println(schabowy);
 		Deser sernik = new Deser(60, 10, "zmiel twarog", "trudne", "tuczace");
+		
+		sernik.dodajSkladnik("ser");
+		sernik.dodajSkladnik("jajka");
+		sernik.dodajSkladnik("maka");
+		sernik.dodajSkladnik("cukier");
+		
+		
 		System.out.println(sernik);
 		
-		//sernik.dodajSkladnik("ser");
-		
-		
-		
+
 		
 	}
 

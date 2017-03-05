@@ -4,10 +4,13 @@ public class Zupa extends Danie {
 
 	boolean weganskie;
 
-	Zupa(int czas, int osoby, String przygotowanie, String trudnosc, boolean wegeMax) {
+	Zupa(int czas, int osoby, String przygotowanie, String trudnosc, boolean wegeMax) throws ZbytCzasochlonne {
 		super(czas, osoby, przygotowanie, trudnosc);
 		weganskie = wegeMax;
-		// TODO Auto-generated constructor stub
+		if (czas > 60){
+			throw new ZbytCzasochlonne("Za dlugi czas przygotowania");
+	
+		}
 	}
 
 	@Override
