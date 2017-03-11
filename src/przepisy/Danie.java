@@ -27,8 +27,7 @@ public abstract class Danie {
 				+ sposobPrzygotowania + ", stopienTrudnosci=" + stopienTrudnosci + ", skladniki=" + skladniki + "]";
 	}
 
-	void dodajSkladnik(String produkt) {
+	void dodajSkladnik(String produkt)  {
 		skladniki.add(produkt);
-
 	}
 }

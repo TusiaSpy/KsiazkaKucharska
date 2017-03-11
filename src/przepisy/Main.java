@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 		ArrayList<String> skladniki = new ArrayList<String>();
 		skladniki.add("ziemniaki");
 		skladniki.add("makaron");
@@ -35,7 +35,7 @@ public class Main {
 		
 		Zupa buraczkowa = null;
 		try {
-			buraczkowa = new Zupa(130, 3, "zagotuj wode", "latwe", true);
+			buraczkowa = new Zupa(10, 3, "zagotuj wode", "latwe", true);
 		} catch (ZbytCzasochlonne e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -51,12 +51,20 @@ public class Main {
 		schabowy.dodajSkladnik("bulka tarta");
 		schabowy.dodajSkladnik("jajka");
 		System.out.println(schabowy);
-		Deser sernik = new Deser(60, 10, "zmiel twarog", "trudne", "tuczace");
+		Deser sernik = new Deser(30, 4, "zmiel twarog", "trudne", "wysokokaloryczne");
 		
-		sernik.dodajSkladnik("ser");
-		sernik.dodajSkladnik("jajka");
-		sernik.dodajSkladnik("maka");
-		sernik.dodajSkladnik("cukier");
+		try {
+			sernik.dodajSkladnikDeseru("ser");
+
+			sernik.dodajSkladnikDeseru("jajka");
+			sernik.dodajSkladnikDeseru("maka");
+			sernik.dodajSkladnikDeseru("cukier");
+		} catch (ZbytSkomplikowane e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 		
 		
 		System.out.println(sernik);
