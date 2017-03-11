@@ -11,6 +11,7 @@ public abstract class Danie {
 
 	public void dodajSposobPrzygotowania(String sposobPostepowania) {
 		sposobPrzygotowania = sposobPostepowania;
+	
 	}
 
 	Danie(int czas, int osoby, String przygotowanie, String trudnosc) {
