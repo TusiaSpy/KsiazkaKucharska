@@ -5,11 +5,17 @@ import java.util.List;
 import java.util.Scanner;
 
 public class WczytywaniePrzepisu {
+	
+	public static List<Danie> dania = new ArrayList<Danie>();
+	
 	public static void Wczytaj() {
 		Scanner s = new Scanner(System.in);
-		List<Danie> dania = new ArrayList<Danie>();
+		s.useDelimiter(";");
 		while (s.hasNextLine()) {
 			String typ = s.next();
+			if(typ.equals("q")){
+    			break;
+    		}
 			String nazwa = s.next();
 			int czasPrzygotowania = s.nextInt();
 			int dlaIluOsob = s.nextInt();
@@ -21,7 +27,7 @@ public class WczytywaniePrzepisu {
 				String kalorie = s.next();
 				dania.add(new Deser(czasPrzygotowania, dlaIluOsob, sposobPrzygotowania, trudnosc, kalorie));
 
-				;
+				
 			} else if (typ.equals("Zupa")) {
 				boolean wegeMax = Boolean.getBoolean(s.next());
 				try {

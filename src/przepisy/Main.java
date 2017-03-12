@@ -5,7 +5,16 @@ import java.util.Arrays;
 
 public class Main {
 
-	public static void main(String[] args)  {
+	public static void main(String[] args) {
+
+		WczytywaniePrzepisu.Wczytaj();
+		System.out.println(WczytywaniePrzepisu.dania);
+		
+	}
+	
+	
+
+	static void jakiesSmieci() {
 		ArrayList<String> skladniki = new ArrayList<String>();
 		skladniki.add("ziemniaki");
 		skladniki.add("makaron");
@@ -16,23 +25,22 @@ public class Main {
 		skladniki.add("czosnek");
 		skladniki.add("mleko");
 		skladniki.add("maka");
-		
-		
+
 		System.out.println(Arrays.toString(skladniki.toArray()));
 		// TODO Auto-generated method stub
-		
+
 		skladniki.add(1, "kasza");
 		System.out.println(Arrays.toString(skladniki.toArray()));
-		
+
 		skladniki.remove(2);
 		System.out.println(Arrays.toString(skladniki.toArray()));
-		
+
 		skladniki.set(4, "pieprz");
 		System.out.println(Arrays.toString(skladniki.toArray()));
-		
-		System.out.println( skladniki.contains("szpinak"));
-		System.out.println( skladniki.contains("mleko"));
-		
+
+		System.out.println(skladniki.contains("szpinak"));
+		System.out.println(skladniki.contains("mleko"));
+
 		Zupa buraczkowa = null;
 		try {
 			buraczkowa = new Zupa(10, 3, "zagotuj wode", "latwe", true);
@@ -46,13 +54,13 @@ public class Main {
 		System.out.println(buraczkowa);
 		buraczkowa.dodajSposobPrzygotowania("Umyj buraki");
 		System.out.println(buraczkowa);
-		DanieGlowne schabowy = new DanieGlowne(45, 2, "ubij kotleta", "srednio trudne", false );
+		DanieGlowne schabowy = new DanieGlowne(45, 2, "ubij kotleta", "srednio trudne", false);
 		schabowy.dodajSkladnik("kotlet wieprzowy");
 		schabowy.dodajSkladnik("bulka tarta");
 		schabowy.dodajSkladnik("jajka");
 		System.out.println(schabowy);
 		Deser sernik = new Deser(30, 4, "zmiel twarog", "trudne", "wysokokaloryczne");
-		
+
 		try {
 			sernik.dodajSkladnikDeseru("ser");
 
@@ -63,15 +71,9 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
-		
-		System.out.println(sernik);
-		
 
-		
+		System.out.println(sernik);
+
 	}
 
-	
 }
