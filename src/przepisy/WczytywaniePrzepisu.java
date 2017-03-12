@@ -1,40 +1,45 @@
 package przepisy;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class WczytywaniePrzepisu {
-public static void WczytywaniePrzepisu(){
-	Scanner s = new Scanner(System.in);
-	Danie przepis = new Danie;
-	while(s.hasNextLine()){
-		String typ = s.next();
-		String nazwa = s.next();
-		int  czasPrzygotowania = s.next();
-		int dlaIluOsob = s.nextInt();
-		
-		if(typ.equals("Deser")){
-			String kalorie = s.next();
-			Danie.add(new przepisy.Deser.Deser( czas,  osoby,  przygotowanie,  trudnosc,  kalorie)
+	public static void Wczytaj() {
+		Scanner s = new Scanner(System.in);
+		List<Danie> dania = new ArrayList<Danie>();
+		while (s.hasNextLine()) {
+			String typ = s.next();
+			String nazwa = s.next();
+			int czasPrzygotowania = s.nextInt();
+			int dlaIluOsob = s.nextInt();
+			String trudnosc= s.next();
+			String skladniki= s.next();
+			String sposobPrzygotowania= s.next();
 
-;
+			if (typ.equals("Deser")) {
+				String kalorie = s.next();
+				dania.add(new Deser(czasPrzygotowania, dlaIluOsob, sposobPrzygotowania, trudnosc, kalorie));
+
+				;
+			} else if (typ.equals("Zupa")) {
+				boolean wegeMax = Boolean.getBoolean(s.next());
+				try {
+					dania.add(new Zupa(czasPrzygotowania, dlaIluOsob, sposobPrzygotowania, trudnosc, wegeMax));
+				} catch (ZbytCzasochlonne e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					System.out.println("Zbyt czasoch³onny przepis");
+				}
+			}
+
+			else if (typ.equals("DanieGlowne")) {
+				boolean wege = Boolean.getBoolean(s.next());
+				dania.add(new DanieGlowne(czasPrzygotowania, dlaIluOsob, sposobPrzygotowania, trudnosc, wege));
+			} else {
+				System.out.println("nie zapisuje takich przpisow");
+			}
+
 		}
-		else if(typ.equals("Zupa")){
-			String wegeMax = s.next();
-			pojazdy.add(new Samolot(nazwa, kolor, przebieg, cena, linieLotnicze));
-		}
-		
-		else if(typ.equals("DanieGlowne")){
-			String wege = s.next();
-			pojazdy.add(new Statek(nazwa, kolor, przebieg, cena));
-		}
-		else{
-			 // jakis wyjatek, ze niedozwolony typ dania		}
 	}
-String trudnosc;
-String skladniki;
-String sposobPrzygotowania;
-
-}
-}
 }
