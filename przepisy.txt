@@ -1,0 +1,2 @@
+DanieGlowne;zapiekanka;60;2;latwe;mieso mielone, makaron lasagne, przecier pomidorowy;podsmazyc mieso, dodac przecier, obgotowac makaron, ukladac warstwe makaronu i miesa na przemian, zapiec;false;
+Deser;ciastka owsiane;30;6;latwe;platki owsiane, rodzynki, zurawina, nasiona, jajo, daktyle; daktyle zalac woda i zmiksowac, dodac reszte skladnikow, uformowac ciastka, piec; nieskokaloryczne;q

@@ -1,11 +1,12 @@
 package przepisy;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 
 		WczytywaczPrzepisu wczytywacz = new WczytywaczPrzepisu();
 		System.out.println(wczytywacz.wczytaj());

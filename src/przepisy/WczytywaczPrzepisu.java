@@ -1,6 +1,8 @@
 package przepisy;
 
 import java.util.ArrayList;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -9,8 +11,9 @@ public class WczytywaczPrzepisu {
 	public List<Danie> dania = new ArrayList<Danie>();
 	private Scanner s;
 
-	public List<Danie> wczytaj() {
-		s = new Scanner(System.in);
+	public List<Danie> wczytaj() throws FileNotFoundException{
+		File plik = new File("przepisy.txt");
+		s = new Scanner(plik);
 		s.useDelimiter(";");
 		while (s.hasNextLine()) {
 			String typ = s.next();
@@ -46,6 +49,7 @@ public class WczytywaczPrzepisu {
 			} else {
 				System.out.println("nie zapisuje takich przpisow");
 			}
+			s.nextLine();
 
 		}
 		return dania;
