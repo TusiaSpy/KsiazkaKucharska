@@ -1,2 +1,5 @@
 DanieGlowne;zapiekanka;60;2;latwe;mieso mielone, makaron lasagne, przecier pomidorowy;podsmazyc mieso, dodac przecier, obgotowac makaron, ukladac warstwe makaronu i miesa na przemian, zapiec;false;
-Deser;ciastka owsiane;30;6;latwe;platki owsiane, rodzynki, zurawina, nasiona, jajo, daktyle; daktyle zalac woda i zmiksowac, dodac reszte skladnikow, uformowac ciastka, piec; nieskokaloryczne;q
+Deser;ciastka owsiane;30;6;latwe;platki owsiane, rodzynki, zurawina, nasiona, jajo, daktyle; daktyle zalac woda i zmiksowac, dodac reszte skladnikow, uformowac ciastka, piec; nieskokaloryczne;
+Deser;pralinki migdalowe;15;4;latwe; m¹ka migda³owa, miod,³y¿eczka oleju arganowego;Do miski wsypaæ m¹kê migda³ow¹, dodaæ miód oraz olej i wymieszaæ rêk¹, ugnieœæ i - mocno dociskaj¹c - uformowaæ kuleczki. Mo¿na te¿ dodaæ pó³ ³y¿eczki soku z cytryny dla prze³amania s³odyczy;niskokaloryczne;
+DanieGlowne;kotlety jajeczne;30;2;latwe; kaszya jaglana, mleko,jajka,bulka tarta,koperek,szczypiorek;Kaszê i ugotowane jajka w³o¿yæ do du¿ej miski, dok³adnie rozgnieœæ widelcem. Dodaæ surowe jajko, sól (ok. 1/2 ³y¿eczki), pieprz, 1 ³y¿kê bu³ki tartej, koperek, szczypiorek oraz starty na tarce ser ¿ó³ty jeœli go u¿ywamy. Dok³adnie wymieszaæ, uformowaæ 5 kotletów. smazyc; true;
+q
