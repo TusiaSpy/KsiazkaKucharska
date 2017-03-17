@@ -17,7 +17,7 @@ public class Deser extends Danie {
 	}
 	
 	void dodajSkladnikDeseru(String produkt) throws ZbytSkomplikowane {
-		if (skladniki.size() >= 3) {
+		if (skladniki.size() >= 7) {
 			throw new ZbytSkomplikowane("Wymaga zbyt wielu sk³adników");
 		}
 		skladniki.add(produkt);

@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class WczytywaniePrzepisu {
+public class WczytywaczPrzepisu {
 
-	public static List<Danie> dania = new ArrayList<Danie>();
+	public List<Danie> dania = new ArrayList<Danie>();
+	private Scanner s;
 
-	public static void Wczytaj() {
-		Scanner s = new Scanner(System.in);
+	public List<Danie> wczytaj() {
+		s = new Scanner(System.in);
 		s.useDelimiter(";");
 		while (s.hasNextLine()) {
 			String typ = s.next();
@@ -47,5 +48,6 @@ public class WczytywaniePrzepisu {
 			}
 
 		}
+		return dania;
 	}
 }

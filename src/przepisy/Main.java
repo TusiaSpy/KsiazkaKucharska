@@ -7,8 +7,8 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		WczytywaniePrzepisu.Wczytaj();
-		System.out.println(WczytywaniePrzepisu.dania);
+		WczytywaczPrzepisu wczytywacz = new WczytywaczPrzepisu();
+		System.out.println(wczytywacz.wczytaj());
 		
 	}
 	
