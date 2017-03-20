@@ -1,13 +1,16 @@
 package przepisy;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.sun.javafx.collections.MappingChange.Map;
 
 public abstract class Danie {
 	int czasPrzygotowania;
 	int dlaIluOsob;
 	String sposobPrzygotowania;
 	String stopienTrudnosci;
-	ArrayList<String> skladniki;
+	Map<String, Integer> skladniki= (Map<String, Integer>) new HashMap<String, Integer>() ;
 
 	public void dodajSposobPrzygotowania(String sposobPostepowania) {
 		sposobPrzygotowania = sposobPostepowania;
@@ -19,7 +22,7 @@ public abstract class Danie {
 		dlaIluOsob = osoby;
 		sposobPrzygotowania = przygotowanie;
 		stopienTrudnosci = trudnosc;
-		skladniki = new ArrayList<String>();
+		skladniki = (Map<String, Integer>) new HashMap<String, Integer>() ;
 	}
 
 	@Override
@@ -28,7 +31,8 @@ public abstract class Danie {
 				+ sposobPrzygotowania + ", stopienTrudnosci=" + stopienTrudnosci + ", skladniki=" + skladniki + "]";
 	}
 
-	void dodajSkladnik(String produkt)  {
-		skladniki.add(produkt);
+
+	void dodajSkladnik(String produkt, Integer ilosc)  {
+		((HashMap<String, Integer>) skladniki).put(produkt, ilosc);
 	}
 }
