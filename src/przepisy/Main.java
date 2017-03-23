@@ -49,16 +49,16 @@ public class Main {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		buraczkowa.dodajSkladnik("buraki");
-		buraczkowa.dodajSkladnik("woda");
-		buraczkowa.dodajSkladnik("marchew");
+		buraczkowa.dodajSkladnik("buraki", 0);
+		buraczkowa.dodajSkladnik("woda", 0);
+		buraczkowa.dodajSkladnik("marchew", 0);
 		System.out.println(buraczkowa);
 		buraczkowa.dodajSposobPrzygotowania("Umyj buraki");
 		System.out.println(buraczkowa);
 		DanieGlowne schabowy = new DanieGlowne(45, 2, "ubij kotleta", "srednio trudne", false);
-		schabowy.dodajSkladnik("kotlet wieprzowy");
-		schabowy.dodajSkladnik("bulka tarta");
-		schabowy.dodajSkladnik("jajka");
+		schabowy.dodajSkladnik("kotlet wieprzowy", 0);
+		schabowy.dodajSkladnik("bulka tarta", 0);
+		schabowy.dodajSkladnik("jajka", 0);
 		System.out.println(schabowy);
 		Deser sernik = new Deser(30, 4, "zmiel twarog", "trudne", "wysokokaloryczne");
 

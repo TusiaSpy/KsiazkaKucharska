@@ -20,7 +20,7 @@ public class Deser extends Danie {
 		if (skladniki.size() >= 7) {
 			throw new ZbytSkomplikowane("Wymaga zbyt wielu sk³adników");
 		}
-		skladniki.add(produkt);
+		skladniki.put(produkt, 0);
 	}
 
 }

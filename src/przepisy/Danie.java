@@ -1,16 +1,15 @@
 package przepisy;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
-import com.sun.javafx.collections.MappingChange.Map;
 
 public abstract class Danie {
 	int czasPrzygotowania;
 	int dlaIluOsob;
 	String sposobPrzygotowania;
 	String stopienTrudnosci;
-	Map<String, Integer> skladniki= (Map<String, Integer>) new HashMap<String, Integer>() ;
+	Map<String, Integer> skladniki= new HashMap<String, Integer>() ;
 
 	public void dodajSposobPrzygotowania(String sposobPostepowania) {
 		sposobPrzygotowania = sposobPostepowania;
