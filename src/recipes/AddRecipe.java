@@ -1,4 +1,4 @@
-package przepisy;
+package recipes;
 
 import java.util.ArrayList;
 import java.io.File;
@@ -6,12 +6,12 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
 
-public class WczytywaczPrzepisu {
+public class AddRecipe {
 
-	public List<Danie> dania = new ArrayList<Danie>();
+	public List<Meal> dania = new ArrayList<Meal>();
 	private Scanner s;
 
-	public List<Danie> wczytaj() throws FileNotFoundException{
+	public List<Meal> add() throws FileNotFoundException{
 		File plik = new File("przepisy.txt");
 		s = new Scanner(plik);
 		s.useDelimiter(";");
@@ -30,13 +30,13 @@ public class WczytywaczPrzepisu {
 
 			if (typ.equals("Deser")) {
 				String kalorie = s.next();
-				dania.add(new Deser(czasPrzygotowania, dlaIluOsob, sposobPrzygotowania, trudnosc, kalorie));
+				dania.add(new Dessert(czasPrzygotowania, dlaIluOsob, sposobPrzygotowania, trudnosc, kalorie));
 
 			} else if (typ.equals("Zupa")) {
 				boolean wegeMax = Boolean.getBoolean(s.next());
 				try {
-					dania.add(new Zupa(czasPrzygotowania, dlaIluOsob, sposobPrzygotowania, trudnosc, wegeMax));
-				} catch (ZbytCzasochlonne e) {
+					dania.add(new Soup(czasPrzygotowania, dlaIluOsob, sposobPrzygotowania, trudnosc, wegeMax));
+				} catch (TimeConsuming e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 					System.out.println("Zbyt czasoch³onny przepis");
@@ -45,7 +45,7 @@ public class WczytywaczPrzepisu {
 
 			else if (typ.equals("DanieGlowne")) {
 				boolean wege = Boolean.getBoolean(s.next());
-				dania.add(new DanieGlowne(czasPrzygotowania, dlaIluOsob, sposobPrzygotowania, trudnosc, wege));
+				dania.add(new MainCourse(czasPrzygotowania, dlaIluOsob, sposobPrzygotowania, trudnosc, wege));
 			} else {
 				System.out.println("nie zapisuje takich przpisow");
 			}

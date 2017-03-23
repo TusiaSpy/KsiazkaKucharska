@@ -1,14 +1,14 @@
-package przepisy;
+package recipes;
 
-public class Zupa extends Danie {
+public class Soup extends Meal {
 
 	boolean weganskie;
 
-	Zupa(int czas, int osoby, String przygotowanie, String trudnosc, boolean wegeMax) throws ZbytCzasochlonne {
+	Soup(int czas, int osoby, String przygotowanie, String trudnosc, boolean wegeMax) throws TimeConsuming {
 		super(czas, osoby, przygotowanie, trudnosc);
 		weganskie = wegeMax;
 		if (czas > 60){
-			throw new ZbytCzasochlonne("Za dlugi czas przygotowania");
+			throw new TimeConsuming("Za dlugi czas przygotowania");
 	
 		}
 	}
