@@ -2,12 +2,12 @@ package recipes;
 
 public class Soup extends Meal {
 
-	boolean weganskie;
+	boolean vege;
 
-	Soup(int czas, int osoby, String przygotowanie, String trudnosc, boolean wegeMax) throws TimeConsuming {
-		super(czas, osoby, przygotowanie, trudnosc);
-		weganskie = wegeMax;
-		if (czas > 60){
+	Soup(int time, int people, String preparation, String difficulty, boolean veg) throws TimeConsuming {
+		super(time, people, preparation, difficulty);
+		vege = veg;
+		if (time > 60){
 			throw new TimeConsuming("Za dlugi czas przygotowania");
 	
 		}
@@ -15,6 +15,6 @@ public class Soup extends Meal {
 
 	@Override
 	public String toString() {
-		return super.toString() + " i [weganskie=" + weganskie + "]";
+		return super.toString() + " i [weganskie=" + vege + "]";
 	}
 }

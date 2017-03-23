@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class AddRecipe {
 
-	public List<Meal> dania = new ArrayList<Meal>();
+	public List<Meal> meals = new ArrayList<Meal>();
 	private Scanner s;
 
 	public List<Meal> add() throws FileNotFoundException{
@@ -21,21 +21,21 @@ public class AddRecipe {
 				System.out.println("Nie rozpoznaje tego");
 				break;
 			}
-			String nazwa = s.next();
-			int czasPrzygotowania = s.nextInt();
-			int dlaIluOsob = s.nextInt();
-			String trudnosc = s.next();
-			String skladniki = s.next();
-			String sposobPrzygotowania = s.next();
+			String name = s.next();
+			int preparationTime = s.nextInt();
+			int numberOfPeople = s.nextInt();
+			String difficulty = s.next();
+			String ingredients = s.next();
+			String preparation = s.next();
 
 			if (typ.equals("Deser")) {
-				String kalorie = s.next();
-				dania.add(new Dessert(czasPrzygotowania, dlaIluOsob, sposobPrzygotowania, trudnosc, kalorie));
+				String calories = s.next();
+				meals.add(new Dessert(preparationTime, numberOfPeople, preparation, difficulty, calories));
 
 			} else if (typ.equals("Zupa")) {
 				boolean wegeMax = Boolean.getBoolean(s.next());
 				try {
-					dania.add(new Soup(czasPrzygotowania, dlaIluOsob, sposobPrzygotowania, trudnosc, wegeMax));
+					meals.add(new Soup(preparationTime, numberOfPeople, preparation, difficulty, wegeMax));
 				} catch (TimeConsuming e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -45,13 +45,13 @@ public class AddRecipe {
 
 			else if (typ.equals("DanieGlowne")) {
 				boolean wege = Boolean.getBoolean(s.next());
-				dania.add(new MainCourse(czasPrzygotowania, dlaIluOsob, sposobPrzygotowania, trudnosc, wege));
+				meals.add(new MainCourse(preparationTime, numberOfPeople, preparation, difficulty, wege));
 			} else {
 				System.out.println("nie zapisuje takich przpisow");
 			}
 			s.nextLine();
 
 		}
-		return dania;
+		return meals;
 	}
 }
