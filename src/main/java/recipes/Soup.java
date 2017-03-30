@@ -1,4 +1,4 @@
-package recipes;
+package main.java.recipes;
 
 public class Soup extends Meal {
 

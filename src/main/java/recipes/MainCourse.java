@@ -1,6 +1,6 @@
-package recipes;
+package main.java.recipes;
 
-public class MainCourse extends Meal {
+public class MainCourse extends Meal implements Bakeable {
 
 	boolean vegetarian;
 
@@ -13,5 +13,12 @@ public class MainCourse extends Meal {
 	@Override
 	public String toString() {
 		return super.toString() + " i [wegetarianskie=" + vegetarian + "]";
+	}
+
+	@Override
+	public void BakeMe() {
+		int czasPieczenia = this.preparationTime/2;
+		System.out.println("Bede sie piekl przez " + czasPieczenia);
+		
 	}
 }

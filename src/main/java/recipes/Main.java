@@ -1,4 +1,4 @@
-package recipes;
+package main.java.recipes;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -15,13 +15,12 @@ public class Main {
 	
 	
 
-	static void jakiesSmieci() {
+	static void experiments() {
 		
 		Soup buraczkowa = null;
 		try {
 			buraczkowa = new Soup(10, 3, "zagotuj wode", "latwe", true);
 		} catch (TimeConsuming e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		buraczkowa.addIngredient("buraki", 0);

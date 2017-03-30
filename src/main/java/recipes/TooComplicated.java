@@ -1,4 +1,4 @@
-package recipes;
+package main.java.recipes;
 
 public class TooComplicated extends Exception {
 
