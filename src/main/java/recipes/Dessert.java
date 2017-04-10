@@ -1,12 +1,10 @@
 package main.java.recipes;
 
-import java.util.HashMap;
-
 public class Dessert extends Meal implements Bakeable {
 
 	String calories;
 
-	Dessert(int time, int people, String preparing, String difficulty, String kalorie) {
+	public Dessert(int time, int people, String preparing, String difficulty, String kalorie) {
 		super(time, people, preparing, difficulty);
 		calories = kalorie;
 
@@ -33,11 +31,11 @@ public class Dessert extends Meal implements Bakeable {
 		ingredients.put(product, ilosc);
 	}
 
-	@Override
 	public void BakeMe() {
 		int czasPieczenia = this.preparationTime * 3 / 4;
 		System.out.println("Bede sie piekl przez " + czasPieczenia);
 
 	}
+
 
 }

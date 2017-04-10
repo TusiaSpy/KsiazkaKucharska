@@ -10,13 +10,11 @@ public class Main {
 
 		AddRecipe adding = new AddRecipe();
 		System.out.println(adding.add());
-		
+
 	}
-	
-	
 
 	static void experiments() {
-		
+
 		Soup buraczkowa = null;
 		try {
 			buraczkowa = new Soup(10, 3, "zagotuj wode", "latwe", true);
@@ -36,15 +34,11 @@ public class Main {
 		System.out.println(schabowy);
 		Dessert sernik = new Dessert(30, 4, "zmiel twarog", "trudne", "wysokokaloryczne");
 
-	
-			sernik.addIngredient("ser", 2);
+		sernik.addIngredient("ser", 2);
 
-			sernik.addIngredient("jajka", 3);
-			sernik.addIngredient("maka", 4);
-			sernik.addIngredient("cukier", 2);
-		
-		}
+		sernik.addIngredient("jajka", 3);
+		sernik.addIngredient("maka", 4);
+		sernik.addIngredient("cukier", 2);
+
+	}
 }
-
-
-

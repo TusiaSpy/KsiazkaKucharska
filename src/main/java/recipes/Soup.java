@@ -4,7 +4,7 @@ public class Soup extends Meal {
 
 	boolean vege;
 
-	Soup(int time, int people, String preparation, String difficulty, boolean veg) throws TimeConsuming {
+	public Soup(int time, int people, String preparation, String difficulty, boolean veg) throws TimeConsuming {
 		super(time, people, preparation, difficulty);
 		vege = veg;
 		if (time > 60){

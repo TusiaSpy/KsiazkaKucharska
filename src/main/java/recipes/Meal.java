@@ -15,7 +15,7 @@ public abstract class Meal {
 
 	}
 
-	Meal(int time, int people, String preparing, String difficulty) {
+	public Meal(int time, int people, String preparing, String difficulty) {
 		preparationTime = time;
 		NumberOfPeople = people;
 		preparation = preparing;
@@ -30,7 +30,20 @@ public abstract class Meal {
 				+ ingredients + "]";
 	}
 
-	void addIngredient(String produkt, Integer ilosc) {
+	public void addIngredient(String produkt, Integer ilosc) {
 		((HashMap<String, Integer>) ingredients).put(produkt, ilosc);
+	}
+
+	// funkcjonalnosc dieki ktorej srawdziwmy czy dany przepis zawira dany
+	// skaladnik
+	// 1. nazwa fuknkcji
+	// 2. parametry
+	// 3. co zwraca
+	// 4. implementacja
+	public boolean haveEnoughProducts(String produkt, Integer howMuchIhave) {
+		if (ingredients.containsKey(produkt)) {
+			return ingredients.get(produkt) <= howMuchIhave;
+		}
+		return false;
 	}
 }

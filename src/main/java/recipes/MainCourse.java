@@ -15,10 +15,11 @@ public class MainCourse extends Meal implements Bakeable {
 		return super.toString() + " i [wegetarianskie=" + vegetarian + "]";
 	}
 
-	@Override
 	public void BakeMe() {
 		int czasPieczenia = this.preparationTime/2;
 		System.out.println("Bede sie piekl przez " + czasPieczenia);
 		
 	}
+
+
 }

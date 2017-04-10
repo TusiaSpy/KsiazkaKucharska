@@ -31,11 +31,10 @@ public class AddRecipe {
 			if (typ.equals("Deser")) {
 				String calories = s.next();
 				Dessert dessert = new Dessert(preparationTime, numberOfPeople, preparation, difficulty, calories);
-				// for
-				// Maka 2, Jajka 5,...
+				
 				for (int i = 0; i < ingredients.length; i++) {
 					String[] productQantity = ingredients[i].split(" ", 2);
-					// maka, 2
+					
 					int ilosc = Integer.parseInt(productQantity[1]);
 					dessert.addIngredient(productQantity[0], ilosc);
 
