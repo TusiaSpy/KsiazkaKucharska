@@ -30,22 +30,16 @@ public class AddRecipe {
 
 			if (typ.equals("Deser")) {
 				String calories = s.next();
-				Dessert dessert = new Dessert(preparationTime, numberOfPeople, preparation, difficulty, calories);
-				
-				for (int i = 0; i < ingredients.length; i++) {
-					String[] productQantity = ingredients[i].split(" ", 2);
-					
-					int ilosc = Integer.parseInt(productQantity[1]);
-					dessert.addIngredient(productQantity[0], ilosc);
-
-				}
-				dessert.addIngredient(ingredients[0], 0);
+				Dessert dessert = new Dessert(name, preparationTime, numberOfPeople, preparation, difficulty, calories);
+				addIngredientsToMeal(ingredients, dessert);
 				meals.add(dessert);
 
 			} else if (typ.equals("Zupa")) {
 				boolean wegeMax = Boolean.getBoolean(s.next());
 				try {
-					meals.add(new Soup(preparationTime, numberOfPeople, preparation, difficulty, wegeMax));
+					Soup soup = new Soup(name, preparationTime, numberOfPeople, preparation, difficulty, wegeMax);
+					addIngredientsToMeal(ingredients, soup);
+					meals.add(soup);
 				} catch (TimeConsuming e) {
 					e.printStackTrace();
 					System.out.println("Zbyt czasoch³onny przepis");
@@ -54,7 +48,9 @@ public class AddRecipe {
 
 			else if (typ.equals("DanieGlowne")) {
 				boolean wege = Boolean.getBoolean(s.next());
-				meals.add(new MainCourse(preparationTime, numberOfPeople, preparation, difficulty, wege));
+				MainCourse meal = new MainCourse(name, preparationTime, numberOfPeople, preparation, difficulty, wege);
+				addIngredientsToMeal(ingredients, meal);
+				meals.add(meal);
 			} else {
 				System.out.println("nie zapisuje takich przpisow");
 			}
@@ -62,5 +58,14 @@ public class AddRecipe {
 
 		}
 		return meals;
+	}
+	
+	private static void addIngredientsToMeal(String[] ingredients, Meal meal){
+		for (int i = 0; i < ingredients.length; i++) {
+			String[] productQantity = ingredients[i].split("-", 2);
+			
+			int ilosc = Integer.parseInt(productQantity[1]);
+			meal.addIngredient(productQantity[0], ilosc);
+		}
 	}
 }

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Meal {
+	String name;
 	int preparationTime;
 	int NumberOfPeople;
 	String preparation;
@@ -12,10 +13,10 @@ public abstract class Meal {
 
 	public void addPrepartion(String activities) {
 		preparation = activities;
-
 	}
 
-	public Meal(int time, int people, String preparing, String difficulty) {
+	public Meal(String name, int time, int people, String preparing, String difficulty) {
+		this.name = name;
 		preparationTime = time;
 		NumberOfPeople = people;
 		preparation = preparing;
@@ -23,27 +24,29 @@ public abstract class Meal {
 		ingredients = (Map<String, Integer>) new HashMap<String, Integer>();
 	}
 
+	public String getName() {
+		return name;
+	}
+
 	@Override
 	public String toString() {
-		return "Danie [=" + "czasPrzygotowania=" + preparationTime + ", dlaIluOsob=" + NumberOfPeople
-				+ ", sposobPrzygotowania=" + preparation + ", stopienTrudnosci=" + complication + ", skladniki="
-				+ ingredients + "]";
+		return "Meal [name=" + name + ", preparationTime=" + preparationTime + ", NumberOfPeople=" + NumberOfPeople
+				+ ", preparation=" + preparation + ", complication=" + complication + ", ingredients=" + ingredients
+				+ "]";
 	}
 
 	public void addIngredient(String produkt, Integer ilosc) {
 		((HashMap<String, Integer>) ingredients).put(produkt, ilosc);
 	}
 
-	// funkcjonalnosc dieki ktorej srawdziwmy czy dany przepis zawira dany
-	// skaladnik
-	// 1. nazwa fuknkcji
-	// 2. parametry
-	// 3. co zwraca
-	// 4. implementacja
-	public boolean haveEnoughProducts(String produkt, Integer howMuchIhave) {
+	public boolean hasEnoughProducts(String produkt, Integer howMuchIhave) {
 		if (ingredients.containsKey(produkt)) {
 			return ingredients.get(produkt) <= howMuchIhave;
 		}
 		return false;
+	}
+	
+	public boolean hasProduct(String produkt) {
+		return ingredients.containsKey(produkt);
 	}
 }

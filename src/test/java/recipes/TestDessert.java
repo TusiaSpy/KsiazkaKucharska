@@ -1,5 +1,6 @@
 package test.java.recipes;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,7 +16,7 @@ public class TestDessert {
 
 	@Test
 	public void test() {
-		Dessert sernik = new Dessert(30, 4, "zmiel twarog", "trudne", "wysokokaloryczne");
+		Dessert sernik = new Dessert("sernik", 30, 4, "zmiel twarog", "trudne", "wysokokaloryczne");
 
 		sernik.addIngredient("ser", 2);
 
@@ -23,15 +24,15 @@ public class TestDessert {
 		sernik.addIngredient("maka", 4);
 		sernik.addIngredient("cukier", 2);
 
-		boolean haveEnough = sernik.haveEnoughProducts("jajka", 2);
+		boolean haveEnough = sernik.hasEnoughProducts("jajka", 2);
 
-		System.out.println(haveEnough);
+		Assert.assertFalse(haveEnough);
 
 	}
 	
 	@Test
 	public void test2() throws TimeConsuming {
-		Soup rosol = new Soup(30, 5, "pokroj i ugotuj", "latwe", false);
+		Soup rosol = new Soup("rosol",30, 5, "pokroj i ugotuj", "latwe", false);
 
 		rosol.addIngredient("kurczak", 1);
 
@@ -39,9 +40,9 @@ public class TestDessert {
 		rosol.addIngredient("makaron", 1);
 		
 
-		boolean haveEnough = rosol.haveEnoughProducts("wloszczyzna", 2);
+		boolean haveEnough = rosol.hasEnoughProducts("wloszczyzna", 3);
 
-		System.out.println(haveEnough);
+		Assert.assertTrue(haveEnough);
 
 	}
 }

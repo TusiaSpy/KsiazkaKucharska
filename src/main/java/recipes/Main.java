@@ -5,12 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
 public class Main {
 
 	static Scanner sc = new Scanner(System.in);
-	
-	static List<Meal> przepisy = new ArrayList<>();
+
+	static List<Meal> przepisy = new ArrayList<Meal>();
 
 	public static String getUserInput() {
 		return sc.nextLine();
@@ -19,7 +18,7 @@ public class Main {
 	public static void main(String[] args) throws FileNotFoundException {
 
 		do {
-			System.out.println("1. Wczytaj przepisy z pliku");
+			System.out.println("\n1. Wczytaj przepisy z pliku");
 			System.out.println("2. Znajdz przepis na podstawie skladnikow");
 			System.out.println("3. Wyjscie");
 
@@ -30,7 +29,7 @@ public class Main {
 			switch (wybranyNumer) {
 			case (1):
 				System.out.println("Wybrales wczytywanie przepisów z pliku przepisy.txt."
-						+ "Wpisz tam swoj przepis, oddzielajac jego poszczegolne parametry znakiem ;.");
+						+ " Wpisz tam swoj przepis, oddzielajac jego poszczegolne parametry znakiem ;.");
 				addingRecipe();
 				break;
 
@@ -48,46 +47,44 @@ public class Main {
 			}
 		} while (true);
 
-		
 	}
 
 	static void addingRecipe() {
 		try {
-			AddRecipe adder = new AddRecipe();
-			adder.add();
+			przepisy = AddRecipe.add();
+			for (Meal m : przepisy)
+				System.out.println(m);
 		} catch (FileNotFoundException e) {
 			System.out.println("Nie odnaleziono pliku");
 			e.printStackTrace();
-		
 		}
-		
-// 1. Wiadomo jak chyba??
-		// wpisac do zmiennej przepisy- nie kumam? metoda add dodaje do przepisu
 	}
 
 	static void szukaniePrzepisu() {
-// 
-		// Wpisz jakis skladnik (Odpytaj, wiadomo)
-		// Na podstawie tego skladnika przeszukj przepisy
-		List<Meal> listaZawezona = new ArrayList<>();
-		//do
-		for(Meal m : przepisy){
-			if(true /*m.hasIngredint(jakisIngredientCoWprowadzil)*/){
-				listaZawezona.add(m);
-				System.out.println(/*m.nazwa()*/);
+		String produkt;
+
+		do {
+			System.out.println("Podaj nazwe skladnika, ktory posiadasz. Aby zakonczyc wpisz q.");
+			produkt = sc.nextLine();
+			List<Meal> listaZawezona = new ArrayList<Meal>();
+			System.out.println("Znaleziono "+produkt+" w nastepujcych przepisach:");
+			for (Meal m : przepisy) {
+				if (m.hasProduct(produkt)) {
+					listaZawezona.add(m);
+					System.out.println(m.getName());
+				}
+
 			}
-			
-		}
-		
-		przepisy = listaZawezona;
-		//while
+
+			przepisy = listaZawezona;
+		} while (!produkt.equals("q"));
 	}
 
 	static void experiments() {
 
 		Soup buraczkowa = null;
 		try {
-			buraczkowa = new Soup(10, 3, "zagotuj wode", "latwe", true);
+			buraczkowa = new Soup("buraczkowa", 10, 3, "zagotuj wode", "latwe", true);
 		} catch (TimeConsuming e1) {
 			e1.printStackTrace();
 		}
@@ -97,12 +94,12 @@ public class Main {
 		System.out.println(buraczkowa);
 		buraczkowa.addPrepartion("Umyj buraki");
 		System.out.println(buraczkowa);
-		MainCourse schabowy = new MainCourse(45, 2, "ubij kotleta", "srednio trudne", false);
+		MainCourse schabowy = new MainCourse("schbowy", 45, 2, "ubij kotleta", "srednio trudne", false);
 		schabowy.addIngredient("kotlet wieprzowy", 0);
 		schabowy.addIngredient("bulka tarta", 0);
 		schabowy.addIngredient("jajka", 0);
 		System.out.println(schabowy);
-		Dessert sernik = new Dessert(30, 4, "zmiel twarog", "trudne", "wysokokaloryczne");
+		Dessert sernik = new Dessert("sernik", 30, 4, "zmiel twarog", "trudne", "wysokokaloryczne");
 
 		sernik.addIngredient("ser", 2);
 

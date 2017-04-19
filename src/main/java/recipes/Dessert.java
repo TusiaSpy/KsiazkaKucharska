@@ -4,8 +4,8 @@ public class Dessert extends Meal implements Bakeable {
 
 	String calories;
 
-	public Dessert(int time, int people, String preparing, String difficulty, String kalorie) {
-		super(time, people, preparing, difficulty);
+	public Dessert(String name, int time, int people, String preparing, String difficulty, String kalorie) {
+		super(name, time, people, preparing, difficulty);
 		calories = kalorie;
 
 	}
