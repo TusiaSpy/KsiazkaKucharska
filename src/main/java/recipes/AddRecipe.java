@@ -8,11 +8,11 @@ import java.util.Scanner;
 
 public class AddRecipe {
 
-	public List<Meal> meals = new ArrayList<Meal>();
-	private Scanner s;
+	public static List<Meal> meals = new ArrayList<Meal>();
+	private static Scanner s;
 
-	public List<Meal> add() throws FileNotFoundException {
-		File plik = new File("desery.txt");
+	public static List<Meal> add() throws FileNotFoundException {
+		File plik = new File("przepisy.txt");
 		s = new Scanner(plik);
 		s.useDelimiter(";");
 		while (s.hasNextLine()) {
